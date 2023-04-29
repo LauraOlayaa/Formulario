@@ -1,46 +1,27 @@
-function validarCampos(atributos){
-    const rut= 11111
-    console.log(atributos)
-}
- 
-function obtenerCampos(){
-   
-    return {rut,nombre,numero,apellidoMaterno,apellidoPaterno,profesion,edad,correo,fecha,genero}
-}
+$('#formulario_carta').on('submit', function(evento) {
+    evento.preventDefault() //
 
-function enviarFormulario (evento){
-  
-    
+    const rut = $("#rut").val() //
 
-} 
- 
-document.addEventListener("DOMContentLoaded",function(){
-    $("#formulario_carta").on("submit", function(){
-       
-        const rut = $("#rut").val()
-    
-        const nombre = $("#nombre").val()
-        
-        const numero = $("#numero").val()
-    
-        const apellidoPaterno = $("#apellido_Paterno").val()
-        
-        const apellidoMaterno = $("#apellido_Materno").val()
-        
-        const profesion = $("#profesion").val()
-        
-        const edad = $("#edad").val()
-        
-        const correo = $("#correo").val()
-    
-        const fecha = $("#fecha").val()
-        
-        const genero= $("#genero").val()
-    
-        
+    const nombre = $("#nombre").val()
 
-        const texto = rut+""+nombre+""+numero+""+apellidoPaterno+""+apellidoMaterno+""+profesion+""+edad+""+correo+""+fecha+""+genero
-        $("#carta").val("taaaaa")
-        return false
-    })
+    const numero = $("#numero").val()
+
+    const apellidoPaterno = $("#apellido_paterno").val()
+
+    const apellidoMaterno = $("#apellido_materno").val()
+
+    const profesion = $("#profesion").val()
+
+    const edad = $("#edad").val()
+
+    const correo = $("#correo").val()
+
+    const fecha = $("#fecha_nacimiento").val()
+
+    const genero= $("#genero").val()
+
+    const texto = rut + " " + nombre + " "  + numero + " "  + apellidoPaterno + " "  + apellidoMaterno + " "  + profesion + " "  + edad + " "  + correo + " "  + fecha + " "  + genero
+
+    $("#carta").val(texto)
 })
