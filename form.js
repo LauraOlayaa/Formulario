@@ -1,103 +1,46 @@
-const formulario = document.getElementById('formulario');
-const inputs = document.querySelectorAll('#formulario input');
-
-const expresiones = {
-	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^.{4,12}$/, // 4 a 12 digitos.
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+function validarCampos(atributos){
+    const rut= 11111
+    console.log(atributos)
+}
+ 
+function obtenerCampos(){
+   
+    return {rut,nombre,numero,apellidoMaterno,apellidoPaterno,profesion,edad,correo,fecha,genero}
 }
 
-const campos = {
-	usuario: false,
-	nombre: false,
-	password: false,
-	correo: false,
-	telefono: false
-}
+function enviarFormulario (evento){
+  
+    
 
-const validarFormulario = (e) => {
-	switch (e.target.name) {
-		case "rut":
-			validarCampo(expresiones.rut, e.target, 'rut');
-		break;
-		case "celular":
-			validarCampo(expresiones.celular, e.target, 'celular');
-		break;
-		case "nombre":
-			validarCampo(expresiones.nombre, e.target, 'nombre');
-			
-		break;
-		case "apellido paterno":
-			validarCampo(expresiones.apellido , e.target, 'apellido paterno');
-			
-		break;
-        case "apellido materno":
-			validarCampo(expresiones.apellido2, e.target, 'apellido materno');
-			
-		break;
-        case "profesion":
-			validarCampo(expresiones.profesion, e.target, 'perofesion');
-		break;
-		case "email":
-			validarCampo(expresiones.email, e.target, 'email');
-		break;
-		case "fecha":
-			validarCampo(expresiones.fecha, e.target, 'fecha');
-		break;
-        case "sexo":
-			validarCampo(expresiones.sexo, e.target, 'maculino o femenino');
-		break;
-	}
-}
+} 
+ 
+document.addEventListener("DOMContentLoaded",function(){
+    $("#formulario_carta").on("submit", function(){
+       
+        const rut = $("#rut").val()
+    
+        const nombre = $("#nombre").val()
+        
+        const numero = $("#numero").val()
+    
+        const apellidoPaterno = $("#apellido_Paterno").val()
+        
+        const apellidoMaterno = $("#apellido_Materno").val()
+        
+        const profesion = $("#profesion").val()
+        
+        const edad = $("#edad").val()
+        
+        const correo = $("#correo").val()
+    
+        const fecha = $("#fecha").val()
+        
+        const genero= $("#genero").val()
+    
+        
 
-const validarCampo = (expresion, input, campo) => {
-	if(expresion.test(input.value)){
-		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
-		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
-		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
-		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
-		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
-		campos[campo] = true;
-	} else {
-		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
-		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
-		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
-		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
-		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
-		campos[campo] = false;
-	}
-}
-
-const validarApellido2 = () => {
-	const inputApellido1 = document.getElementById('password');
-	const inputApellido2 = document.getElementById('password2');
-
-	
-}
-
-inputs.forEach((input) => {
-	input.addEventListener('keyup', validarFormulario);
-	input.addEventListener('blur', validarFormulario);
-});
-
-formulario.addEventListener('submit', (e) => {
-	e.preventDefault();
-
-	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked ){
-		formulario.reset();
-
-		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-		setTimeout(() => {
-			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-		}, 5000);
-
-		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-			icono.classList.remove('formulario__grupo-correcto');
-		});
-	} else {
-		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-	}
-}); 
+        const texto = rut+""+nombre+""+numero+""+apellidoPaterno+""+apellidoMaterno+""+profesion+""+edad+""+correo+""+fecha+""+genero
+        $("#carta").val("taaaaa")
+        return false
+    })
+})

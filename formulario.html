@@ -11,50 +11,82 @@
 </head>
 <body>
     <h2 class="formulario__titulo">Apoyo ambiental para Chiloe</h2>
-    <form action="#" method="get" class="formulariooo"> 
-        <label for="Rut" class="formulario__label">Rut</label>
-        <input type="number" id="Rut" min="000000000" max="999999999" required  class="formulario__input"/>
-        <br>
-        <label for="Numero" class="formulario__label">Celular</label>
-        <input type="number" id="Numero" min="000000000" max="999999999999" required class="formulario__input"/>
-        <br>
-        <label for="Nombre" class="formulario__label">Nombre</label>
-        <input type="text" id="Nombre" name="Nombre" placeholder="Nombre"min="3" max="20" required class="formulario__input"/> 
-        <br>
-        <label for="Apellido" class="formulario__label">Apellido Paterno</label>
-        <input type="text" id="Apellido" name="Apellido" placeholder="Apellido" min="3" max="20" required class="formulario__input"/> 
-        <br> 
-        <label for="Apellido" class="formulario__label">Apellido Materno</label>
-        <input type="text" id="Apellido" name="Apellido" placeholder="Apellido" min="3" max="20" required class="formulario__input"/> 
-        <br>
-        <label for="Profesion" class="formulario__label">Profesion</label>
-        <input type="text" name="Profesion" placeholder="Profesion" required class="formulario__input"/> 
-        <br>
+    <form id= "formulario_carta"    class="formulariooo" > 
+     
+        <label for="rut" class="formulario__label">Rut</label>
+        <input type="number" id="rut" minlength="9" maxlength="10"  class="formulario__input"/>
+        
+        <br>
+
+        <label for="numero" class="formulario__label">Celular</label>
+        <input type="number" id="numero" min="000000000" max="999999999999"  class="formulario__input"/>
+        
+        <br>
+
+        <label for="nombre" class="formulario__label">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre"min="3" max="20" class="formulario__input"/> 
+        
+        <br>
+
+        <label for="apellido" class="formulario__label">Apellido Paterno</label>
+        <input type="text" id="apellido_paterno" name="apellido" placeholder="Apellido" min="3" max="20"  class="formulario__input"/> 
+        
+        <br> 
+
+        <label for="apellido" class="formulario__label">Apellido Materno</label>
+        <input type="text" id="apellido_materno" name="apellido" placeholder="Apellido" min="3" max="20"  class="formulario__input"/> 
+        
+        <br>
+
+        <label for="profesion" class="formulario__label">Profesion</label>
+        <input type="text" id="profesion" name="profesion" placeholder="profesion"  class="formulario__input"/> 
+        
+        <br>
+         
         <label for="edad" class="formulario__label">Edad</label>
-        <input type="number" name="edad" min="18" max="35" required class="formulario__input">
-        <br>
+        <input type="number" id="edad" name="edad" min="18" max="35"  class="formulario__input">
+        
+        <br>
+
         <label for="correo" class="formulario__label">Email:</label>
-        <input type="email" name="correo" placeholder="Ingrese email" required class="formulario__input">
-        <br>
-        <label for="fecha" class="formulario__label">Fecha</label>
-        <input type="date" name="fecha" required class="formulario__input">
-        <br>
-        <label for="masculino" class="formulario__label">Masculino</label>
-        <input type="radio" name="genero" value="masculino" required class="formulario__input">
-        <label for="red" class="formulario__label">Femenino</label>
-        <input type="radio" name="genero" value="Femenino" required class="formulario__input">
-        <br>
+        <input type="email" id="correo" name="correo" placeholder="Ingrese email"  class="formulario__input">
+        
+        <br>
+          
+        <label for="fecha" class="formulario__label">Fecha Nacimiento</label>
+        <input type="date" id="fecha_nacimiento"    name="fecha"  class="formulario__input">
+        
+        <br>
+
+        <label for="genero" class="formulario__label">Genero</label>
+        
+        <select name="genero" id="genero" class="formulario__input"> 
+        <option value="femenino">Femenino</option>
+        <option value="masculino">Masculino</option>
+        </select>
+        <br>
+
         <input type="file" name="selec">
-        <br>
+        
+        <br>
+
         <label for="comentario" class="formulario__label">Comentario</label>
-        <br> 
+        
+        <br> 
+         
         <textarea name="comentario" id="comentario" placeholder="Ingrese comentario
-        "rows="10" cols="60" required></textarea>
-        <br>
-        <button type="submit" class="formulario__submit">Enviar</button>
-        <button type="submit" class="Crear_carta">Crear Carta</button>
+        "rows="10" cols="60" ></textarea>
+        
+        <br>
+
+        
+        <button type="submit" class="formulario__submit">Crear Carta</button>
+
+
     </form>
-    
+    <div > 
+         <textarea name="comentario" id="carta" placeholder="Carta" rows="10" cols="60" disabled ></textarea> 
+    </div>
 </body>
 
-
+ 
